@@ -30,7 +30,7 @@ function cloneRepo() {
 
 // transfers local project to the remote server
 function transferProjectToRemote(failed, successful) {
-	return ssh.putDirectory(__dirname + '/group-project', '/home/ubuntu/hackathon-starter-temp', {
+	return ssh.putDirectory(__dirname + '/group-project', '/home/ubuntu/group-project-temp', {
 		recursive: true,
 		concurrency: 1,
 		validate: function(itemPath) {
