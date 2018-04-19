@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  .main.container.clearfix
+    .row
+      .col-md-8.col-md-offset-2
+        h1.display-4
+          img.avatar.img-circle.hidden-xs-down(src='/images/avatar.png', alt='avatar')
+          | #{name}
+        h2.bio
+        | #{bio}
+
+        form(method='POST' action='/profile')
+          div.form-group
+           label(for='post') Post
+           input.form-control(type='text' id='message' placeholder='What do want to ask?' name='post')
+           button.btn.btn-primary(type='submit') Send
+           div(id = post)
