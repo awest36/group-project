@@ -10,10 +10,36 @@ router.get('/profile', mid.requiresLogin, function(req, res, next) {
         if (error) {
           return next(error);
         } else {
-          return res.render('profile', { title: 'Profile', name: user.name, bio: user.bio });
+          return res.render('profile', { title: 'Profile', name: user.name, bio: user.Bio });
         }
       });
+    //  router.get('/profile', function(req, res, next){
+    //    return res.render(user.message);
+    //  });
 });
+
+//POST /profile-chat
+/*router.post('/profile', function(req, res, next){
+  if(req.body.message) {
+   if (error){
+     var err = new Error ('Message not sent.');
+   }
+  }
+
+  //create
+  var userdata = {
+    message: req.body.message
+  };
+
+  User.insert(userdata, function (error, user) {
+    if (error) {
+      return next(error);
+    } else {
+      req.session.userId = user._id;
+      return res.redirect('/profile');
+    }
+  });
+}) */
 
 // GET /logout
 router.get('/logout', function(req, res, next) {

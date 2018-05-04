@@ -17,6 +17,7 @@
   "homepage": "https://github.com/awest36/group-project#readme",
   "description": "",
   "dependencies": {
+    "bcrypt": "^2.0.1",
     "body-parser": "^1.18.2",
     "connect-mongo": "^2.0.1",
     "connect-session": "0.0.1",
@@ -25,6 +26,7 @@
     "mongoose": "^5.0.15",
     "node-cmd": "^3.0.0",
     "node-ssh": "^5.1.1",
-    "pug": "^2.0.3"
+    "pug": "^2.0.3",
+    "socket.io": "^2.1.0"
   }
 }

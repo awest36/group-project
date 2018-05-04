@@ -1,18 +1,194 @@
 extends layout
 
 block content
-  .main.container.clearfix
-    .row
-      .col-md-8.col-md-offset-2
-        h1.display-4
-          img.avatar.img-circle.hidden-xs-down(src='/images/avatar.png', alt='avatar')
-          | #{name}
-        h2.bio
-        | #{bio}
+    // Page Container
+    .w3-container.w3-content(style="max-width:1400px;margin-top:80px")
+      // The Grid
+      .w3-row
+        // Left Column
+        .w3-col.m3
 
-        form(method='POST' action='/profile')
-          div.form-group
-           label(for='post') Post
-           input.form-control(type='text' id='message' placeholder='What do want to ask?' name='post')
-           button.btn.btn-primary(type='submit') Send
-           div(id = post)
+          .w3-card.w3-round.w3-white
+            .w3-container
+              .w3-center
+              |#{name}
+              img.avatar.img-circle.hidden-xs-down(src='/images/avatar.png', alt='avatar')
+              h2.bio
+                | #{bio}
+
+          br
+
+          // Accordion
+          .w3-card.w3-round
+            .w3-white
+              button.w3-button.w3-block.w3-theme-l1.w3-left-align(onclick="myFunction('Demo1')")
+                i.fa.fa-circle-o-notch.fa-fw.w3-margin-right
+                |  My Groups
+              |
+              #Demo1.w3-hide.w3-container
+                p Friends
+                |
+                p Mentors
+                |
+                p Instructors
+              |
+              button.w3-button.w3-block.w3-theme-l1.w3-left-align(onclick="myFunction('Demo2')")
+                i.fa.fa-calendar-check-o.fa-fw.w3-margin-right
+                |  My Events
+              |
+              #Demo2.w3-hide.w3-container
+                p Project Due
+                |
+                p Presentation
+                |
+                p Graduation
+              |
+              button.w3-button.w3-block.w3-theme-l1.w3-left-align(onclick="myFunction('Demo3')")
+                i.fa.fa-users.fa-fw.w3-margin-right
+                |  My Photos
+              |
+              #Demo3.w3-hide.w3-container
+                .w3-row-padding
+                  br
+                  |
+                  .w3-half
+                    img.w3-margin-bottom(src="/w3images/lights.jpg", style="width:100%")
+                  |
+                  .w3-half
+                    img.w3-margin-bottom(src="/w3images/nature.jpg", style="width:100%")
+                  |
+                  .w3-half
+                    img.w3-margin-bottom(src="/w3images/mountains.jpg", style="width:100%")
+                  |
+                  .w3-half
+                    img.w3-margin-bottom(src="/w3images/forest.jpg", style="width:100%")
+                  |
+                  .w3-half
+                    img.w3-margin-bottom(src="/w3images/nature.jpg", style="width:100%")
+                  |
+                  .w3-half
+                    img.w3-margin-bottom(src="/w3images/fjords.jpg", style="width:100%")
+          |
+          br
+          // Interests
+          .w3-card.w3-round.w3-white.w3-hide-small
+            .w3-container
+              p Interests
+              |
+              p
+                span.w3-tag.w3-small.w3-theme-d5 News
+                |
+                span.w3-tag.w3-small.w3-theme-d4 Code
+                |
+                span.w3-tag.w3-small.w3-theme-d3 Labels
+                |
+                span.w3-tag.w3-small.w3-theme-d2 Games
+                |
+                span.w3-tag.w3-small.w3-theme-d1 Friends
+                |
+                span.w3-tag.w3-small.w3-theme Games
+                |
+                span.w3-tag.w3-small.w3-theme-l1 Friends
+                |
+                span.w3-tag.w3-small.w3-theme-l2 Food
+                |
+                span.w3-tag.w3-small.w3-theme-l3 Design
+                |
+                span.w3-tag.w3-small.w3-theme-l4 Art
+                |
+                span.w3-tag.w3-small.w3-theme-l5 Photos
+          |
+          br
+          // Alert Box
+          .w3-container.w3-display-container.w3-round.w3-theme-l4.w3-border.w3-theme-border.w3-margin-bottom.w3-hide-small
+            span.w3-button.w3-theme-l3.w3-display-topright(onclick="this.parentElement.style.display='none'")
+              i.fa.fa-remove
+            |
+            p
+              strong Hey!
+            |
+            p People are looking at your profile. Find out who.
+          |
+          br
+          //chat-help
+          .w3-card.w3-round.w3-white.w3-hide-small
+            .w3-container
+             p
+               strong Do you want to ask a question?
+             |
+             a.card-link(href='http://localhost:5000') Ask here...
+          // End Left Column
+        // Middle Column
+        .w3-col.m7
+          .w3-row-padding
+            .w3-col.m12
+              .w3-card.w3-round.w3-white
+                .w3-container.w3-padding
+                  h6.w3-opacity Social Media
+                  |
+                  p.w3-border.w3-padding(contenteditable="true") Status: Feeling GREAT
+                  |
+                  button.w3-button.w3-theme(type="button")
+                    i.fa.fa-pencil
+                    |   Post
+          // End Middle Column
+        // Right Column
+        .w3-col.m2
+          .w3-card.w3-round.w3-white.w3-center
+            .w3-container
+              p Upcoming Events:
+              |
+              img(src="/images/c.png", alt="Forest", style="width:100%;")
+              |
+              p
+                strong Coder Camps
+              |
+              p Friday 15:00 pm
+              |
+              p
+                button.w3-button.w3-block.w3-theme-l4 Info
+          |
+          br
+          |
+          .w3-card.w3-round.w3-white.w3-center
+            .w3-container
+              p Friend Request
+              |
+              img(src="/images/ash.png", alt="Avatar", style="width:50%")
+              br
+              |
+              span Ashleigh Sanchez
+              |
+              .w3-row.w3-opacity
+                .w3-half
+                  button.w3-button.w3-block.w3-green.w3-section(title="Accept")
+                    i.fa.fa-check
+                |
+                .w3-half
+                  button.w3-button.w3-block.w3-red.w3-section(title="Decline")
+                    i.fa.fa-remove
+          |
+          br
+          |
+          .w3-card.w3-round.w3-white.w3-center
+            .w3-container
+              p Friend Request
+              |
+              img(src="/images/ale.png", alt="Avatar", style="width:50%")
+              br
+              |
+              span Alex West
+              |
+              .w3-row.w3-opacity
+                .w3-half
+                  button.w3-button.w3-block.w3-green.w3-section(title="Accept")
+                    i.fa.fa-check
+                |
+                .w3-half
+                  button.w3-button.w3-block.w3-red.w3-section(title="Decline")
+                    i.fa.fa-remove
+          |
+          br
+          // End Right Column
+        // End Grid
+      // End Page Container
