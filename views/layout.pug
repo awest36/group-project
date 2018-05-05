@@ -12,6 +12,7 @@ head
   link(rel="stylesheet", href="https://www.w3schools.com/lib/w3-theme-blue-grey.css")
   link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Open+Sans")
   link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+  script(src='script.js')
   body
     // load navbar.jade
     include navbar
@@ -21,7 +22,33 @@ head
 
     // footer
     p.foot.text-xs-center A Group-Project
+    script.
+      // Accordion
+      function myFunction(id) {
+      var x = document.getElementById(id);
+      if (x.className.indexOf("w3-show") == -1) {
+      x.className += " w3-show";
+      x.previousElementSibling.className += " w3-theme-d1";
+      } else {
+      x.className = x.className.replace("w3-show", "");
+      x.previousElementSibling.className =
+      x.previousElementSibling.className.replace(" w3-theme-d1", "");
+      }
+      }
+      // Used to toggle the menu on smaller screens when clicking on the menu button
+      function openNav() {
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
+      x.className += " w3-show";
+      } else {
+      x.className = x.className.replace(" w3-show", "");
+      }
+      }
+      //post
+      function messages() {
+      var x = document.getElementById(message).value;
+      document.getElementById('posts').innerhtml = x;
+      }
 
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js', integrity='sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7', crossorigin='anonymous')
-    script(src='script.js')

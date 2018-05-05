@@ -52,22 +52,22 @@ block content
                   br
                   |
                   .w3-half
-                    img.w3-margin-bottom(src="/w3images/lights.jpg", style="width:100%")
+                    img.w3-margin-bottom(src="/images/b.jpg", style="width:100%")
                   |
                   .w3-half
-                    img.w3-margin-bottom(src="/w3images/nature.jpg", style="width:100%")
+                    img.w3-margin-bottom(src="/images/code.jpg", style="width:100%")
                   |
                   .w3-half
-                    img.w3-margin-bottom(src="/w3images/mountains.jpg", style="width:100%")
+                    img.w3-margin-bottom(src="/images/coder.jpg", style="width:100%")
                   |
                   .w3-half
-                    img.w3-margin-bottom(src="/w3images/forest.jpg", style="width:100%")
+                    img.w3-margin-bottom(src="/images/girls.jpg", style="width:100%")
                   |
                   .w3-half
-                    img.w3-margin-bottom(src="/w3images/nature.jpg", style="width:100%")
+                    img.w3-margin-bottom(src="/images/s.jpg", style="width:100%")
                   |
                   .w3-half
-                    img.w3-margin-bottom(src="/w3images/fjords.jpg", style="width:100%")
+                    img.w3-margin-bottom(src="/images/scoop.jpg", style="width:100%")
           |
           br
           // Interests
@@ -126,11 +126,21 @@ block content
                 .w3-container.w3-padding
                   h6.w3-opacity Social Media
                   |
-                  p.w3-border.w3-padding(contenteditable="true") Status: Feeling GREAT
-                  |
-                  button.w3-button.w3-theme(type="button")
-                    i.fa.fa-pencil
-                    |   Post
+                  form
+                    input(type='text', name='post', id='message' style='width:100%')
+                    |
+                    br
+                    |
+                    button.w3-button.w3-theme(onclick='messages()')
+                      i.fa.fa-pencil
+                      |   Post
+              |
+              br
+              |
+              section
+               .w3-card.w3-round.w3-white
+                  .w3-container.w3-padding
+                      div(id='posts')
           // End Middle Column
         // Right Column
         .w3-col.m2
